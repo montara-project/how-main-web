@@ -15,5 +15,4 @@ const active = () =>
 
 export const webinarPrivatePlanQueries = {
   active,
-
 } as const
