@@ -18,7 +18,7 @@ type OSMResources = {
   searchByAddress: (address: string) => Promise<any>
 }
 
-const osmResources = (): OSMResources => {
+const resources = (): OSMResources => {
   return {
     searchByAddress: (address: string) => {
       const queryParams = qs.stringify({ q: address, format: 'json', limit: 10 })
@@ -27,4 +27,4 @@ const osmResources = (): OSMResources => {
   }
 }
 
-export const osmServices = osmResources()
+export const osmServices = resources()

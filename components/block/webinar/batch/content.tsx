@@ -15,7 +15,7 @@ export default function WebinarBatchContent() {
     data: plansResponse,
     isLoading,
     isFetching,
-  } = useQuery(queries.webinar.privatePlan.active())
+  } = useQuery(queries.webinars.privates.plans.active())
 
   const loading = isLoading || isFetching
   const plansData = useMemo(() => {

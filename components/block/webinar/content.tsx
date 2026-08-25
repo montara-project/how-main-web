@@ -23,7 +23,7 @@ export default function WebinarContent({ auth }: WebinarContentProps) {
     data: webinarResponse,
     isLoading,
     isFetching,
-  } = useQuery(queries.webinar.main.list({ offset, limit }))
+  } = useQuery(queries.webinars.list({ offset, limit }))
 
   const loading = isLoading || isFetching
   const webinars = useMemo(() => {
