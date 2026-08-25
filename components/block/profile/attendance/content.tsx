@@ -13,7 +13,7 @@ export function AttendanceContent() {
   const { offset, limit } = usePaginationQuery({ defaultLimit: 100 })
 
   const { data: attendanceResponse, isLoading } = useQuery(
-    queries.webinar.logAttendance.list({ offset, limit })
+    queries.webinars.attendances.logs.list({ offset, limit })
   )
 
   const attendances = useMemo(() => {

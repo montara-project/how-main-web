@@ -1,13 +1,9 @@
 import { authQueries } from './auth'
 import { osmQueries } from './osm'
-import { webinarLogAttendanceQueries, webinarPrivatePlanQueries, webinarQueries } from './webinar'
+import { collectWebinarQueries } from './webinar'
 
 export const queries = {
   auth: authQueries,
   osm: osmQueries,
-  webinar: {
-    main: webinarQueries,
-    privatePlan: webinarPrivatePlanQueries,
-    logAttendance: webinarLogAttendanceQueries,
-  },
+  webinars: collectWebinarQueries,
 } as const

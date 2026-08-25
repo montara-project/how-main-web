@@ -2,9 +2,11 @@ import { queryOptions } from '@tanstack/react-query'
 
 import { services } from '../services'
 
+export const OSM_ADDRESS_QUERY_KEY = 'osm/address'
+
 const getOSMByAddress = (address: string) =>
   queryOptions({
-    queryKey: ['osm-by-address', address],
+    queryKey: [OSM_ADDRESS_QUERY_KEY, address],
     queryFn: async () => {
       const res = await services.osm.searchByAddress(address)
       return res.data
@@ -12,5 +14,5 @@ const getOSMByAddress = (address: string) =>
   })
 
 export const osmQueries = {
-  byAddress: getOSMByAddress,
+  address: getOSMByAddress,
 } as const

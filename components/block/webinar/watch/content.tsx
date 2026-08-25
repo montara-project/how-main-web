@@ -24,8 +24,8 @@ interface WebinarWatchContentProps {
 export default function WebinarWatchContent({ slug, auth }: WebinarWatchContentProps) {
   const router = useRouter()
 
-  const queryWebinar = useQuery(queries.webinar.main.slug(slug))
-  const queryListWebinars = useQuery(queries.webinar.main.list({ offset: 0, limit: 3 }))
+  const queryWebinar = useQuery(queries.webinars.slug(slug))
+  const queryListWebinars = useQuery(queries.webinars.list({ offset: 0, limit: 3 }))
 
   const webinar = queryWebinar.data?.data ?? null
   const webinars = useMemo(() => {
