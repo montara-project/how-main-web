@@ -54,7 +54,7 @@ export function PricingSection({ loading, data }: PricingSectionProps) {
   return (
     <>
       <section className="mb-20">
-        <h2 className="mb-10 text-center font-serif text-xl font-bold tracking-wide text-slate-800 sm:text-3xl">
+        <h2 className="mb-10 text-center font-serif text-xl font-bold tracking-wide text-foreground sm:text-3xl">
           Choose Your Plan
         </h2>
         {renderContent()}
@@ -75,10 +75,18 @@ export function EmptyPricingSection() {
         </EmptyMedia>
         <EmptyTitle className="font-serif tracking-wide">No Plans Available</EmptyTitle>
         <EmptyDescription className="text-base">
-          No pricing plans are currently available for this webinar.
+          No pricing plans are currently available for this webinar. Reach out to the team and
+          we&apos;ll help you join the next cohort.
         </EmptyDescription>
       </EmptyHeader>
-      <EmptyContent className="sr-only" />
+      <EmptyContent>
+        <a
+          href="mailto:info@house-of-wizard.xyz"
+          className="inline-flex h-10 items-center justify-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+        >
+          Contact the team
+        </a>
+      </EmptyContent>
     </Empty>
   )
 }

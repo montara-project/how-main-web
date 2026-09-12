@@ -67,8 +67,8 @@ export function ProfileSidebar({ activeTab, onTabChange }: ProfileSidebarProps) 
                 className={cn(
                   'flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors',
                   isActive
-                    ? 'bg-purple-50 text-purple-700'
-                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                    ? 'bg-primary/10 text-primary'
+                    : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'
                 )}
               >
                 <item.icon className="h-5 w-5" />

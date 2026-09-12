@@ -15,7 +15,7 @@ export default function EmptyAttendance() {
   return (
     <Empty>
       <EmptyMedia>
-        <IconCalendarCheck className="h-12 w-12 text-gray-400" />
+        <IconCalendarCheck className="h-12 w-12 text-muted-foreground" />
       </EmptyMedia>
       <EmptyHeader>
         <EmptyTitle>No Attendances Yet</EmptyTitle>

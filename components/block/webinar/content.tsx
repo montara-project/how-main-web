@@ -1,7 +1,8 @@
 'use client'
 
-import { IconFilter, IconSearch } from '@tabler/icons-react'
+import { IconArrowRight, IconFilter, IconSearch } from '@tabler/icons-react'
 import { useQuery } from '@tanstack/react-query'
+import Link from 'next/link'
 import { useMemo } from 'react'
 
 import { Button } from '@/components/ui/button'
@@ -63,16 +64,32 @@ export default function WebinarContent({ auth }: WebinarContentProps) {
       ))
     }
 
-    return <div>No webinars found</div>
+    return (
+      <div className="col-span-full flex flex-col items-center gap-3 py-20 text-center">
+        <p className="font-serif text-xl font-semibold text-foreground">No webinars found</p>
+        <p className="text-sm text-muted-foreground">
+          New sessions are announced soon — explore the private cohort in the meantime.
+        </p>
+        <Button variant="outline" className="mt-2" asChild>
+          <Link href="/webinar/batch">
+            <span>View the Private Cohort</span>
+            <IconArrowRight />
+          </Link>
+        </Button>
+      </div>
+    )
   }
 
   return (
-    <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="mx-auto max-w-7xl px-4 pt-10 pb-20 sm:px-6 lg:px-8">
       <div className="flex flex-col">
-        <h1 className="text-center font-serif text-4xl font-bold tracking-wide text-gray-800 dark:text-gray-100">
+        <p className="text-center text-xs font-semibold tracking-[0.3em] text-gold uppercase">
+          Live Sessions
+        </p>
+        <h1 className="mt-3 text-center font-serif text-4xl font-bold tracking-wide text-foreground sm:text-5xl">
           Webinar
         </h1>
-        <h4 className="text-center text-lg text-gray-600 dark:text-gray-300">
+        <h4 className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted-foreground">
           To become a greater wizard, learn how to analyze Web3 data and start your career in the
           decentralized future.
         </h4>

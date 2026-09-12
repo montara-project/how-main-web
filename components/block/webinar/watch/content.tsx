@@ -67,7 +67,7 @@ export default function WebinarWatchContent({ slug, auth }: WebinarWatchContentP
     return (
       <Container className="relative grid gap-7.5 pb-4 lg:pb-6">
         <h1 className="font-serif text-4xl font-semibold tracking-wide">{webinar?.title}</h1>
-        <h4 className="text-base text-gray-600 sm:text-lg dark:text-gray-300">
+        <h4 className="text-base text-muted-foreground sm:text-lg">
           Elevate your expertise by learning how to analyze Web3 data and take the first step toward
           a career in the decentralized future.
         </h4>
@@ -110,7 +110,7 @@ export default function WebinarWatchContent({ slug, auth }: WebinarWatchContentP
 
         <div className="mt-8 flex flex-col gap-1 lg:items-center">
           <h2 className="font-serif text-2xl font-semibold tracking-wide">Most Access Webinar</h2>
-          <p className="text-base text-gray-600 sm:text-lg dark:text-gray-300">
+          <p className="text-base text-muted-foreground sm:text-lg">
             To become a greater wizard, learn how to analyze Web3 data and start your career in the
             decentralized future.
           </p>

@@ -28,7 +28,7 @@ export default function Profile({ auth, isMobile }: ProfileProps) {
   return (
     <RainbowButton
       className={cn(
-        'h-10 rounded-lg pt-1 font-serif font-semibold tracking-wider',
+        'h-10 rounded-lg font-serif font-semibold tracking-wider',
         isMobile && 'w-full'
       )}
       asChild

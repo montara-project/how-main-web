@@ -9,46 +9,52 @@ import { ASSETS } from '@/lib/constants/assets'
 
 export default function HeroSection() {
   return (
-    <div className="mt-8 flex items-center justify-center bg-linear-to-br from-indigo-100 via-white to-purple-100 py-16 sm:h-screen">
+    <section className="relative flex items-center justify-center overflow-hidden py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="space-y-8 text-center">
-          <div className="space-y-4">
-            <div className="flex flex-col items-center justify-center gap-4">
-              <div className="relative flex h-48 w-48 items-center justify-center overflow-hidden rounded-lg bg-white md:shadow-xl">
+        <div className="space-y-10 text-center">
+          <div className="space-y-6">
+            <div className="flex justify-center">
+              <p className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold-soft px-4 py-1.5 text-xs font-semibold tracking-[0.22em] text-gold-foreground uppercase">
+                Web3 Data Analyst School
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-center gap-6">
+              <div className="relative flex h-44 w-44 items-center justify-center overflow-hidden rounded-2xl bg-card md:shadow-xl">
                 <ShineBorder
                   borderWidth={2}
                   duration={14}
-                  shineColor={['#A07CFE', '#FE8FB5', '#FFBE7B']}
+                  shineColor={['#8B5CF6', '#F59E0B', '#C084FC']}
                 />
                 <img
                   src={ASSETS.BRAND_LOGO}
                   alt="House of Wizard"
-                  className="z-10 h-44 w-44 object-contain"
-                  width={176}
-                  height={176}
+                  className="z-10 h-40 w-40 object-contain"
+                  width={160}
+                  height={160}
                 />
               </div>
-            </div>
-            <SparklesText className="font-serif font-bold tracking-wide text-neutral-900">
-              House of Wizard
-            </SparklesText>
+              <SparklesText className="font-serif text-4xl font-bold tracking-wide text-foreground sm:text-6xl">
+                House of Wizard
+              </SparklesText>
 
-            <p className="mx-auto max-w-2xl text-xl text-gray-600">
-              Transform blockchain data into actionable insights. Learn how to analyze Web3 data and
-              start your career in the decentralized future.
-            </p>
+              <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+                Transform blockchain data into actionable insights. Learn how to analyze Web3 data
+                and start your career in the decentralized future.
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link href="/webinar/batch" className="inline-flex items-center justify-center">
-              <RainbowButton className="h-11 w-full gap-2 rounded-lg px-8 pt-1">
+              <RainbowButton className="h-12 w-full gap-2 rounded-xl px-8 sm:w-auto">
                 <span className="font-serif font-semibold tracking-wider">Join Private</span>
                 <IconArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </RainbowButton>
             </Link>
 
             <Button
-              variant={'outline'}
-              className="h-11 gap-2 rounded-lg px-8 py-2 font-medium shadow-sm transition duration-300 ease-in-out hover:shadow-xl"
+              variant="outline"
+              className="h-12 w-full gap-2 rounded-xl px-8 font-medium shadow-sm transition duration-300 hover:shadow-lg sm:w-auto"
             >
               <span className="font-serif text-base font-semibold tracking-wider">
                 View Courses
@@ -56,22 +62,23 @@ export default function HeroSection() {
             </Button>
           </div>
 
-          <div className="flex flex-col gap-8 pt-4 sm:flex-row md:justify-center md:pt-6">
-            <div className="flex items-center gap-2">
-              <IconDatabase className="h-6 w-6 text-indigo-600" />
-              <span className="text-gray-600">Blockchain Data</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <IconChartLine className="h-6 w-6 text-indigo-600" />
-              <span className="text-gray-600">DeFi Analytics</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <IconBinary className="h-6 w-6 text-indigo-600" />
-              <span className="text-gray-600">Smart Contract Analysis</span>
-            </div>
+          <div className="flex flex-col justify-center gap-6 pt-2 sm:flex-row sm:gap-10">
+            {[
+              { icon: IconDatabase, label: 'Blockchain Data' },
+              { icon: IconChartLine, label: 'DeFi Analytics' },
+              { icon: IconBinary, label: 'Smart Contract Analysis' },
+            ].map(({ icon: Icon, label }) => (
+              <div
+                key={label}
+                className="flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground"
+              >
+                <Icon className="h-5 w-5 text-primary" />
+                <span>{label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

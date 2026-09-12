@@ -59,7 +59,7 @@ export function WebinarCard({
   const renderButton = () => {
     if (!isAuth) {
       return (
-        <Button className="h-10 w-full rounded-lg" variant="primary" asChild>
+        <Button className="h-10 w-full rounded-xl" variant="primary" asChild>
           <Link href="/sign-in">
             <span className="font-serif font-semibold tracking-wider">Sign In</span>
             <IconArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -110,31 +110,33 @@ export function WebinarCard({
   const schedule = renderDays()
 
   return (
-    <Card className="w-100" variant="accent">
+    <Card className="h-full w-full" variant="accent">
       <CardHeader>
         <CardHeading>
-          <CardTitle className="text-purple-900 ring-purple-200">{speaker}</CardTitle>
+          <CardTitle className="inline-flex w-fit items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold tracking-wide text-primary">
+            {speaker}
+          </CardTitle>
         </CardHeading>
         <CardToolbar>
-          <Button variant="outline" size="sm" className="text-purple-800">
-            <IconUsers className="text-purple-800" />
+          <Button variant="outline" size="sm">
+            <IconUsers className="text-primary" />
             <span>{participants}</span>
           </Button>
         </CardToolbar>
       </CardHeader>
       <CardContent className="mt-auto flex flex-col py-2">
         <div className="min-h-24 flex-1 space-y-2">
-          <p className="[display:-webkit-box] overflow-hidden text-base leading-snug font-semibold text-slate-900 [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
+          <p className="[display:-webkit-box] overflow-hidden text-base leading-snug font-semibold text-foreground [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
             {title}
           </p>
-          <p className="[display:-webkit-box] overflow-hidden text-sm leading-relaxed text-slate-600 [-webkit-box-orient:vertical] [-webkit-line-clamp:3]">
+          <p className="[display:-webkit-box] overflow-hidden text-sm leading-relaxed text-muted-foreground [-webkit-box-orient:vertical] [-webkit-line-clamp:3]">
             {description}
           </p>
         </div>
         {schedule && (
-          <div className="mt-6 flex items-center justify-between text-xs font-semibold tracking-wider text-slate-400 uppercase">
+          <div className="mt-6 flex items-center justify-between text-xs font-semibold tracking-wider text-muted-foreground uppercase">
             <span>{duration ? 'Duration' : 'Schedule'}</span>
-            <span className="text-sm font-medium text-slate-700 normal-case">{schedule}</span>
+            <span className="text-sm font-medium text-foreground normal-case">{schedule}</span>
           </div>
         )}
       </CardContent>
@@ -145,7 +147,7 @@ export function WebinarCard({
 
 export function WebinarCardSkeleton() {
   return (
-    <div className="h-full w-100 rounded-2xl border border-gray-200/80 bg-white p-5 shadow-[0_10px_30px_-18px_rgba(15,23,42,0.45)]">
+    <div className="h-full w-full rounded-2xl border border-border/70 bg-card p-5 shadow-xs">
       <div className="flex h-full flex-col gap-3">
         <div className="flex items-center justify-between">
           <Skeleton className="h-6 w-30 rounded-full" />

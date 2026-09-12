@@ -21,7 +21,7 @@ export function GeneralContent({ user, loading }: GeneralContentProps) {
   if (!user) {
     return (
       <Card>
-        <CardContent className="py-12 text-center text-gray-500">
+        <CardContent className="py-12 text-center text-muted-foreground">
           Unable to load profile data.
         </CardContent>
       </Card>
