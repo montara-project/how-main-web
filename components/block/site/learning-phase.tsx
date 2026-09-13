@@ -1,4 +1,4 @@
-import { IconArrowRight, IconCheck } from '@tabler/icons-react'
+import { IconArrowRight, IconCheck, IconSparkles } from '@tabler/icons-react'
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
@@ -8,19 +8,22 @@ import { cn } from '@/lib/utils'
 
 export default function LearningPhaseSection() {
   return (
-    <section id="learning-phase" className="relative overflow-hidden bg-white py-20">
+    <section id="learning-phase" className="relative overflow-hidden py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
-          <h2 className="font-serif text-3xl font-bold tracking-wide text-gray-900">
+          <h2 className="font-serif text-3xl font-bold tracking-wide text-foreground sm:text-4xl">
             Choose Your Learning Phase
           </h2>
-          <p className="mt-4 text-xl text-gray-600">{"Choose the plan that's right for you."}</p>
+          <p className="mt-4 text-lg text-muted-foreground sm:text-xl">
+            Choose the plan that&apos;s right for you.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="relative z-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:mx-auto lg:max-w-4xl">
           <LearningCard
             title="Early Bird"
             description="Limited time offer for first 20 students"
+            highlight
             features={[
               { text: '16 weeks live training' },
               { text: 'Personal mentorship' },
@@ -79,15 +82,22 @@ type LearningCardProps = {
   features: Feature[]
   title: string
   description: string
+  highlight?: boolean
   disabled?: boolean
 }
 
-function LearningCard({ features, title, description, disabled = false }: LearningCardProps) {
+function LearningCard({
+  features,
+  title,
+  description,
+  highlight = false,
+  disabled = false,
+}: LearningCardProps) {
   function renderButton() {
     if (disabled) {
       return (
         <Button
-          className="h-11 w-full rounded-lg px-4 py-3 text-sm font-semibold transition-colors"
+          className="h-11 w-full rounded-xl px-4 py-3 text-sm font-semibold transition-colors"
           disabled={disabled}
         >
           Coming Soon
@@ -97,7 +107,7 @@ function LearningCard({ features, title, description, disabled = false }: Learni
 
     return (
       <Link href="/webinar/batch" className="inline-flex w-full items-center justify-center">
-        <RainbowButton className="h-11 w-full gap-2 rounded-lg">
+        <RainbowButton className="h-11 w-full gap-2 rounded-xl">
           <span>Join Now</span>
           <IconArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
         </RainbowButton>
@@ -106,12 +116,27 @@ function LearningCard({ features, title, description, disabled = false }: Learni
   }
 
   return (
-    <div className="z-10 flex h-full flex-col rounded-lg border bg-white transition-all duration-200 hover:shadow-lg">
-      <div className="flex grow flex-col p-8">
+    <div
+      className={cn(
+        'relative z-10 flex h-full flex-col rounded-2xl border bg-card/80 p-[1px] backdrop-blur transition-all duration-300',
+        highlight
+          ? 'border-primary/40 shadow-[0_0_40px_-12px_var(--glow-a)]'
+          : 'bg-border/40 hover:shadow-lg'
+      )}
+    >
+      {highlight && (
+        <span className="absolute -top-3.5 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-primary px-3.5 py-1 text-xs font-semibold tracking-wider text-primary-foreground uppercase">
+          <IconSparkles className="h-3.5 w-3.5" />
+          Enrollment Open
+        </span>
+      )}
+      <div className="flex grow flex-col rounded-[calc(1rem-1px)] p-8">
         {/* Header */}
         <div className="mb-6">
-          <h3 className="mb-2 font-serif text-xl font-bold tracking-wide text-gray-900">{title}</h3>
-          <p className="text-sm text-gray-600">{description}</p>
+          <h3 className="mb-2 font-serif text-xl font-bold tracking-wide text-foreground">
+            {title}
+          </h3>
+          <p className="text-sm text-muted-foreground">{description}</p>
         </div>
 
         {/* Features */}
@@ -119,8 +144,13 @@ function LearningCard({ features, title, description, disabled = false }: Learni
           <ul className="space-y-4">
             {features.map((feature, index) => (
               <li key={index} className="flex items-start gap-3">
-                <IconCheck className="mt-0.5 h-5 w-5 shrink-0 text-indigo-600" />
-                <span className="text-sm font-medium text-gray-600">{feature.text}</span>
+                <IconCheck
+                  className={cn(
+                    'mt-0.5 h-5 w-5 shrink-0',
+                    highlight ? 'text-gold' : 'text-muted-foreground/60'
+                  )}
+                />
+                <span className="text-sm font-medium text-foreground/80">{feature.text}</span>
               </li>
             ))}
           </ul>

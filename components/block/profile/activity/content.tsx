@@ -21,7 +21,7 @@ export function ActivityContent() {
       <CardContent>
         <Empty>
           <EmptyMedia>
-            <IconActivity className="h-12 w-12 text-gray-400" />
+            <IconActivity className="h-12 w-12 text-muted-foreground" />
           </EmptyMedia>
           <EmptyHeader>
             <EmptyTitle>No Activity Yet</EmptyTitle>

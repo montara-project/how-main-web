@@ -8,11 +8,11 @@ import { META } from '@/lib/constants/meta'
 import DecorationProvider from '@/lib/providers/decoration'
 import { cn } from '@/lib/utils'
 
-const outfit = Outfit({ subsets: ['latin'], variable: '--font-sans' })
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' })
 
 const facultyGlyphic = Faculty_Glyphic({
   subsets: ['latin'],
-  variable: '--font-serif',
+  variable: '--font-faculty-glyphic',
   weight: '400',
 })
 

@@ -218,7 +218,7 @@ export default function GalleryUploadField({
                 {/* File Info */}
                 <div className="absolute right-0 bottom-0 left-0 rounded-b-lg bg-black/70 p-2 text-white opacity-0 transition-opacity group-hover:opacity-100">
                   <p className="truncate text-xs font-medium">{fileItem.file.name}</p>
-                  <p className="text-xs text-gray-300">{formatBytes(fileItem.file.size)}</p>
+                  <p className="text-xs text-muted-foreground">{formatBytes(fileItem.file.size)}</p>
                 </div>
               </div>
             ))}

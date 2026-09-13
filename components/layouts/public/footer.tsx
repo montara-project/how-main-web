@@ -2,35 +2,42 @@
 
 import Link from 'next/link'
 
+import { ASSETS } from '@/lib/constants/assets'
+
 import { FooterMenu } from './menu'
 
 export default function PublicFooter() {
   return (
-    <footer className="bg-slate-900 text-slate-300">
+    <footer className="text-[var(--footer-fg)]" style={{ backgroundColor: 'var(--footer-bg)' }}>
       {/* Main Footer Content */}
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Brand Section */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              {/* <Image
-                src="/logo-how.png"
+            <div className="flex items-center gap-2.5">
+              <img
+                src={ASSETS.BRAND_LOGO}
                 alt="House of Wizard"
                 className="h-10 w-10"
                 width={40}
                 height={40}
-              /> */}
+              />
               <span className="font-serif text-xl font-bold tracking-wide text-white">
                 House of Wizard
               </span>
             </div>
-            <p className="text-sm">
+            <p className="max-w-sm text-sm leading-relaxed opacity-80">
               Empowering the next generation of Web3 data analysts through comprehensive online
               education.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex gap-2 pt-1">
               {FooterMenu.socialMedia.map((item) => (
-                <Link key={item.name} href={item.href} className="transition hover:text-indigo-500">
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  aria-label={item.name}
+                  className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/5 transition-colors hover:border-[var(--gold)]/40 hover:bg-white/10 hover:text-[var(--gold)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--gold)]"
+                >
                   <item.icon className="h-5 w-5" />
                 </Link>
               ))}
@@ -39,13 +46,16 @@ export default function PublicFooter() {
 
           {/* Course Categories */}
           <div>
-            <h3 className="mb-4 font-serif text-lg font-semibold tracking-wide text-white">
+            <h3 className="mb-4 font-serif text-base font-semibold tracking-wide text-white">
               Course Categories
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {FooterMenu.courseCategories.map((category) => (
                 <li key={category.name}>
-                  <Link href={category.href} className="text-sm transition hover:text-indigo-500">
+                  <Link
+                    href={category.href}
+                    className="text-sm opacity-80 transition-opacity hover:text-[var(--gold)] hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--gold)]"
+                  >
                     {category.name}
                   </Link>
                 </li>
@@ -55,13 +65,16 @@ export default function PublicFooter() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="mb-4 font-serif text-lg font-semibold tracking-wide text-white">
+            <h3 className="mb-4 font-serif text-base font-semibold tracking-wide text-white">
               Quick Links
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {FooterMenu.quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm transition hover:text-indigo-500">
+                  <Link
+                    href={link.href}
+                    className="text-sm opacity-80 transition-opacity hover:text-[var(--gold)] hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--gold)]"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -69,15 +82,18 @@ export default function PublicFooter() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Support */}
           <div>
-            <h3 className="mb-4 font-serif text-lg font-semibold tracking-wide text-white">
+            <h3 className="mb-4 font-serif text-base font-semibold tracking-wide text-white">
               Support
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {FooterMenu.support.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-sm transition hover:text-indigo-500">
+                  <Link
+                    href={item.href}
+                    className="text-sm opacity-80 transition-opacity hover:text-[var(--gold)] hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--gold)]"
+                  >
                     {item.name}
                   </Link>
                 </li>
@@ -88,21 +104,21 @@ export default function PublicFooter() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-slate-800">
+      <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <div className="md:flex md:items-center md:justify-between">
-            <div className="text-sm text-slate-400">
+            <div className="text-sm opacity-70">
               © {new Date().getFullYear()} House of Wizard. All rights reserved.
             </div>
             <div className="mt-4 md:mt-0">
-              <div className="flex space-x-6 text-sm text-slate-400">
-                <Link href="/terms" className="transition hover:text-indigo-500">
+              <div className="flex space-x-6 text-sm opacity-70">
+                <Link href="/terms" className="transition-colors hover:text-[var(--gold)]">
                   Terms
                 </Link>
-                <Link href="/privacy" className="transition hover:text-indigo-500">
+                <Link href="/privacy" className="transition-colors hover:text-[var(--gold)]">
                   Privacy
                 </Link>
-                <Link href="/" className="transition hover:text-indigo-500">
+                <Link href="/" className="transition-colors hover:text-[var(--gold)]">
                   Cookies
                 </Link>
               </div>

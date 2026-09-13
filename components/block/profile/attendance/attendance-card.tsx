@@ -29,10 +29,10 @@ function getTypeColor(type: AttendanceType) {
 
 export function AttendanceCard({ attendance }: AttendanceCardProps) {
   return (
-    <div className="flex items-center justify-between rounded-lg border border-gray-200 bg-white px-4 py-3">
+    <div className="flex items-center justify-between rounded-lg border border-border bg-card px-4 py-3">
       <div className="flex flex-col gap-1">
-        <p className="truncate text-sm font-medium text-gray-900">{attendance.webinar?.title}</p>
-        <p className="text-xs text-gray-500">
+        <p className="truncate text-sm font-medium text-foreground">{attendance.webinar?.title}</p>
+        <p className="text-xs text-muted-foreground">
           {formatDate(new Date(attendance.attendance_at), 'dd/MM/yyyy')}
         </p>
       </div>
@@ -50,7 +50,7 @@ export function AttendanceCard({ attendance }: AttendanceCardProps) {
 
 export function AttendanceCardSkeleton() {
   return (
-    <div className="flex items-center justify-between rounded-lg border border-gray-200 bg-white px-4 py-3">
+    <div className="flex items-center justify-between rounded-lg border border-border bg-card px-4 py-3">
       <div className="flex flex-1 flex-col gap-1.5">
         <Skeleton className="h-4 w-48" />
         <Skeleton className="h-3 w-24" />
