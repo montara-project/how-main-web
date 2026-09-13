@@ -21,11 +21,11 @@ export default function ContactPage() {
       <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-[var(--glow-a)] blur-3xl" />
       <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
         <header className="flex flex-col gap-6">
-          <span className="inline-flex w-fit items-center rounded-full border-gold/30 bg-gold-soft px-4 py-1 font-serif text-xs font-medium tracking-[0.3em] text-gold-foreground uppercase">
+          <span className="inline-flex w-fit items-center rounded-full border-gold/30 bg-gold-soft px-4 py-1 text-xs font-semibold tracking-[0.3em] text-gold-foreground uppercase">
             Contact House of Wizard
           </span>
           <div className="space-y-4">
-            <h1 className="font-serif text-4xl leading-tight font-semibold tracking-normal text-foreground sm:text-5xl">
+            <h1 className="font-serif text-4xl leading-tight font-semibold tracking-wide text-foreground sm:text-5xl">
               Let&apos;s build clarity from web3 data.
             </h1>
             <p className="max-w-2xl text-lg text-muted-foreground">
@@ -52,7 +52,7 @@ export default function ContactPage() {
         <section className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
           <div className="space-y-6">
             <div className="rounded-lg border border-border bg-card/80 p-6 shadow-xs">
-              <h2 className="font-serif text-xl font-semibold text-foreground">
+              <h2 className="font-serif text-xl font-semibold tracking-wide text-foreground">
                 Send us a message
               </h2>
               <p className="mt-3 text-muted-foreground">
@@ -117,7 +117,9 @@ export default function ContactPage() {
             </div>
 
             <div className="rounded-lg border border-border bg-card/80 p-6 shadow-xs">
-              <h3 className="text-lg font-semibold text-foreground">What we can help with</h3>
+              <h3 className="font-serif text-lg font-semibold tracking-wide text-foreground">
+                What we can help with
+              </h3>
               <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground">
                 <li>Cohort enrollment and analyst readiness assessments.</li>
                 <li>Custom training for protocol or DAO analytics teams.</li>
@@ -129,7 +131,9 @@ export default function ContactPage() {
 
           <aside className="space-y-6">
             <div className="rounded-lg border border-border bg-card/80 p-6 shadow-xs">
-              <h3 className="text-lg font-semibold text-foreground">Direct channels</h3>
+              <h3 className="font-serif text-lg font-semibold tracking-wide text-foreground">
+                Direct channels
+              </h3>
               <div className="mt-4 space-y-4 text-muted-foreground">
                 {DIRECT_CONTACTS.map((item) => (
                   <div key={item.name}>
@@ -145,7 +149,7 @@ export default function ContactPage() {
                         {item.value}
                       </a>
                     ) : (
-                      <p className="text-sm tracking-wide text-foreground">{item.value}</p>
+                      <p className="text-sm text-foreground">{item.value}</p>
                     )}
                   </div>
                 ))}
@@ -153,7 +157,9 @@ export default function ContactPage() {
             </div>
 
             <div className="rounded-lg border border-border bg-card/80 p-6 shadow-xs">
-              <h3 className="text-lg font-semibold text-foreground">Community pathway</h3>
+              <h3 className="font-serif text-lg font-semibold tracking-wide text-foreground">
+                Community pathway
+              </h3>
               <p className="mt-3 text-muted-foreground">
                 Join the House of Wizard community for peer reviews, research salons, and curated
                 analyst discussions.

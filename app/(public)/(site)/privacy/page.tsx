@@ -25,7 +25,7 @@ export default function PrivacyPage() {
             <span className="inline-flex w-fit items-center rounded-full border-gold/30 bg-gold-soft px-4 py-1 text-xs font-semibold tracking-[0.3em] text-gold-foreground uppercase">
               Privacy &amp; Data Stewardship
             </span>
-            <h1 className="font-serif text-4xl leading-tight font-semibold tracking-normal text-foreground sm:text-5xl">
+            <h1 className="font-serif text-4xl leading-tight font-semibold tracking-wide text-foreground sm:text-5xl">
               Privacy Policy
             </h1>
             <p className="max-w-2xl text-lg text-muted-foreground">
@@ -179,7 +179,9 @@ export default function PrivacyPage() {
 
             <aside className="space-y-6">
               <div className="rounded-lg border border-border bg-card/80 p-6 shadow-xs">
-                <h3 className="text-lg font-semibold text-foreground">Our Privacy Commitments</h3>
+                <h3 className="font-serif text-lg font-semibold tracking-wide text-foreground">
+                  Our Privacy Commitments
+                </h3>
                 <ul className="mt-4 space-y-3 text-muted-foreground">
                   <li>
                     <span className="font-semibold text-foreground">Transparency:</span> clear
@@ -197,7 +199,9 @@ export default function PrivacyPage() {
               </div>
 
               <div className="rounded-lg border border-border bg-card/80 p-6 shadow-xs">
-                <h3 className="text-lg font-semibold text-foreground">Contact Us</h3>
+                <h3 className="font-serif text-lg font-semibold tracking-wide text-foreground">
+                  Contact Us
+                </h3>
                 <p className="mt-3 text-muted-foreground">
                   Questions about this policy or your data? Reach out anytime.
                 </p>

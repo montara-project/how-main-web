@@ -27,7 +27,7 @@ export default function TermPage() {
             <span className="inline-flex w-fit items-center rounded-full border-gold/30 bg-gold-soft px-4 py-1 text-xs font-semibold tracking-[0.3em] text-gold-foreground uppercase">
               Terms &amp; Learning Standards
             </span>
-            <h1 className="font-serif text-4xl leading-tight font-semibold tracking-normal text-foreground sm:text-5xl">
+            <h1 className="font-serif text-4xl leading-tight font-semibold tracking-wide text-foreground sm:text-5xl">
               Terms of Service
             </h1>
             <p className="max-w-2xl text-lg text-muted-foreground">
@@ -224,7 +224,9 @@ export default function TermPage() {
 
             <aside className="space-y-6">
               <div className="rounded-lg border border-border bg-card/80 p-6 shadow-xs">
-                <h3 className="text-lg font-semibold text-foreground">Key Highlights</h3>
+                <h3 className="font-serif text-lg font-semibold tracking-wide text-foreground">
+                  Key Highlights
+                </h3>
                 <ul className="mt-4 space-y-3 text-muted-foreground">
                   <li>
                     <span className="font-semibold text-foreground">Responsible access:</span> 18+
@@ -242,7 +244,9 @@ export default function TermPage() {
               </div>
 
               <div className="rounded-lg border border-border bg-card/80 p-6 shadow-xs">
-                <h3 className="text-lg font-semibold text-foreground">Need Help?</h3>
+                <h3 className="font-serif text-lg font-semibold tracking-wide text-foreground">
+                  Need Help?
+                </h3>
                 <p className="mt-3 text-muted-foreground">
                   We are here to clarify any policy or learning requirement.
                 </p>
